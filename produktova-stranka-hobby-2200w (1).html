@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nabíjecí stanice Hobby 2200W | Záložní zdroj energie pro váš domov</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero sekce */
+        .hero {
+            background: #ffffff;
+            color: #333;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #E31E24;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: #1a1a1a;
+        }
+
+        .hero-claim {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #E31E24 0%, #B91C1C 100%);
+            padding: 30px;
+            border-radius: 16px;
+            margin-bottom: 30px;
+            border: none;
+            color: white;
+            box-shadow: 0 10px 30px rgba(227, 30, 36, 0.25);
+        }
+
+        .price {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .price-note {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .key-specs {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .spec-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #E31E24;
+        }
+
+        .spec-label {
+            font-size: 12px;
+            color: #E31E24;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        .spec-value {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #E31E24 0%, #B91C1C 100%);
+            color: white;
+            padding: 20px 50px;
+            font-size: 18px;
+            font-weight: 700;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(227, 30, 36, 0.3);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(227, 30, 36, 0.4);
+            background: linear-gradient(135deg, #B91C1C 0%, #991B1B 100%);
+        }
+
+        .hero-image {
+            position: relative;
+            text-align: center;
+        }
+
+        .hero-image-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #E31E24;
+            border-radius: 20px;
+            padding: 40px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .image-desc {
+            font-size: 14px;
+            color: #666;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Benefity řádek */
+        .benefits-bar {
+            background: white;
+            padding: 40px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 60px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .benefit-item {
+            padding: 20px 10px;
+        }
+
+        .benefit-icon {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 15px;
+            background: linear-gradient(135deg, #E31E24 0%, #B91C1C 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+
+        .benefit-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .benefit-desc {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Galerie */
+        .section {
+            background: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #222;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #f5f5f5;
+            border: 2px dashed #ddd;
+            border-radius: 12px;
+            padding: 30px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .gallery-item-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #E31E24;
+        }
+
+        .gallery-item-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Proč právě tato stanice */
+        .why-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #E31E24 0%, #B91C1C 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #222;
+        }
+
+        .feature-desc {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* Technické parametry */
+        .specs-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .specs-table th {
+            background: linear-gradient(135deg, #E31E24 0%, #B91C1C 100%);
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .specs-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #eee;
+            background: white;
+        }
+
+        .specs-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            color: #555;
+            width: 40%;
+        }
+
+        .specs-table td:last-child {
+            color: #222;
+        }
+
+        /* Scénáře použití */
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 25px;
+        }
+
+        .scenario-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .scenario-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        .scenario-emoji {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .scenario-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #222;
+        }
+
+        .scenario-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Co je v balení */
+        .package-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .package-box {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 16px;
+            border: 2px solid #e9ecef;
+        }
+
+        .package-box h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #222;
+        }
+
+        .package-list {
+            list-style: none;
+        }
+
+        .package-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .package-list li:last-child {
+            border-bottom: none;
+        }
+
+        .package-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #E31E24;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            font-size: 18px;
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        /* CTA Footer */
+        .cta-footer {
+            background: linear-gradient(135deg, #E31E24 0%, #B91C1C 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-footer h2 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-footer p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: white;
+            padding: 20px 50px;
+            font-size: 18px;
+            font-weight: 700;
+            border: 2px solid white;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-secondary:hover {
+            background: white;
+            color: #E31E24;
+        }
+
+        @media (max-width: 1200px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .scenarios-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .scenarios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SEKCE -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Nabíjecí stanice Hobby 2200W</h1>
+                    <p class="hero-claim">Záložní energie pro váš domov, dílnu i cesty. Výkonná LiFePO₄ stanice s kapacitou 2048 Wh a špičkovým výkonem 4400 W.</p>
+                    
+                    <div class="price-box">
+                        <div class="price">29 990 Kč</div>
+                        <div class="price-note">včetně DPH | Doprava zdarma</div>
+                    </div>
+
+                    <div class="key-specs">
+                        <div class="spec-item">
+                            <div class="spec-label">Kapacita</div>
+                            <div class="spec-value">2048 Wh</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Výkon</div>
+                            <div class="spec-value">2200 W</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Peak výkon</div>
+                            <div class="spec-value">4400 W</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-label">Životnost</div>
+                            <div class="spec-value">3500+ cyklů</div>
+                        </div>
+                    </div>
+
+                    <button class="cta-primary">Koupit nyní</button>
+                </div>
+
+                <div class="hero-image">
+                    <div class="hero-image-placeholder">
+                        <div style="font-size: 80px; color: #E31E24;">⚡</div>
+                        <div class="image-desc">
+                            <strong>Návrh vizuálu:</strong> Fotorealistická produktová fotografie na bílém pozadí s jemným stínem. Stanice umístěná mírně v úhlu 3/4, zobrazující přední panel s displejem a všechny hlavní porty. Modrý LED indikátor svítí, na displeji aktuální kapacita. Atmosférické podsvícení zdůrazňuje prémiový charakter produktu.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS BAR -->
+    <section class="benefits-bar">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚚</div>
+                    <div class="benefit-title">Doprava zdarma</div>
+                    <div class="benefit-desc">Doručíme kamkoliv v ČR bez poplatků</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <div class="benefit-title">Ihned expedujeme</div>
+                    <div class="benefit-desc">Skladem, odesláno do 24 hodin</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔧</div>
+                    <div class="benefit-title">Technická podpora</div>
+                    <div class="benefit-desc">Odborná pomoc 7 dní v týdnu</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔋</div>
+                    <div class="benefit-title">LiFePO₄ baterie</div>
+                    <div class="benefit-desc">Dlouhá životnost 3500+ cyklů</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <div class="benefit-title">Bezpečný provoz</div>
+                    <div class="benefit-desc">Ochrana proti přetížení a přehřátí</div>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌍</div>
+                    <div class="benefit-title">Univerzální použití</div>
+                    <div class="benefit-desc">Doma, v dílně, na cestách</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE PRODUKTU -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Produktová galerie</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-item-title">📸 Přední panel</div>
+                    <div class="gallery-item-desc">Detail ovládacího panelu s LCD displejem, tlačítky a porty AC/DC. Zobrazení aktuálního stavu nabití, výkonu a času provozu.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-title">🏡 V interiéru</div>
+                    <div class="gallery-item-desc">Stanice v moderní obývací místnosti na dřevěné komodě, napájející pracovní místo s notebookem a LED lampou. Teplé světlo, útulná atmosféra.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-title">🚐 V karavanu</div>
+                    <div class="gallery-item-desc">Lifestyle foto: stanice v karavanu na výletě, připojená k miniledničce a nabíječkám telefonů. Pohled z okna na hory, atmosféra svobody.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-title">☀️ Solární nabíjení</div>
+                    <div class="gallery-item-desc">Venkovní scéna: stanice připojená k solárním panelům na zahradě chaty. Sluneční paprsky, zelená tráva, koncept soběstačnosti.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-title">🔌 Všechny porty</div>
+                    <div class="gallery-item-desc">Makro detail portů: AC zásuvky, USB-C, USB-A, DC výstupy, solární vstup. Technická preciznost, kvalitní zpracování.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-title">📱 Mobilní aplikace</div>
+                    <div class="gallery-item-desc">Smartphone s aplikací Wonderfree zobrazující monitoring stanice v reálném čase. Graf spotřeby, vzdálené ovládání, přehledné rozhraní.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-title">🔦 Noční režim</div>
+                    <div class="gallery-item-desc">Večerní scéna: stanice svítí modrou LED signalizací při blackoutu, napájí světelný zdroj. Bezpečí a spolehlivost v nouzi.</div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-item-title">📦 Obsah balení</div>
+                    <div class="gallery-item-desc">Rozložené příslušenství: stanice, AC nabíjecí kabel, car charging kabel, solární kabel MC4, uživatelská příručka, vše přehledně uspořádané.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROČ PRÁVĚ TATO STANICE -->
+    <section class="section why-section">
+        <div class="container">
+            <h2 class="section-title">Proč právě nabíjecí stanice Hobby 2200W?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3 class="feature-title">Skutečný výkon</h3>
+                    <p class="feature-desc">Trvalý výkon 2200 W s peak hodnotou až 4400 W zvládne i náročné spotřebiče jako mikrovlnku, varnou konvici nebo elektrické nářadí. Žádné kompromisy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔋</div>
+                    <h3 class="feature-title">Obrovská kapacita</h3>
+                    <p class="feature-desc">2048 Wh poskytne energii na celé hodiny provozu. Napájejte ledničku 30+ hodin, notebook 20+ hodin nebo televizi 15+ hodin během výpadku proudu.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♻️</div>
+                    <h3 class="feature-title">LiFePO₄ technologie</h3>
+                    <p class="feature-desc">Nejbezpečnější typ lithiové baterie s životností přes 3500 cyklů. To znamená více než 10 let spolehlivého provozu při denním používání.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☀️</div>
+                    <h3 class="feature-title">Rychlé solární nabíjení</h3>
+                    <p class="feature-desc">Solární vstup až 1600 W s rozsahem 18–145 V podporuje prakticky jakýkoliv solární panel. Úplná soběstačnost mimo civilizaci.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Chytré ovládání</h3>
+                    <p class="feature-desc">Aplikace Wonderfree přes WiFi, Bluetooth nebo hotspot. Monitoring v reálném čase, vzdálené ovládání a automatické aktualizace firmwaru.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">UPS funkce</h3>
+                    <p class="feature-desc">Automatické přepnutí při výpadku proudu během milisekund. Váš router, počítač nebo domácí server zůstanou v provozu bez přerušení.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌊</div>
+                    <h3 class="feature-title">Čistý sinus</h3>
+                    <p class="feature-desc">AC výstup s čistým sinusovým průběhem je vhodný i pro citlivou elektroniku – notebooky, lékařské přístroje nebo měřicí zařízení.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Komplexní ochrana</h3>
+                    <p class="feature-desc">Ochrana proti zkratu, přepětí, přetížení, přehřátí i nízkému napětí. Zařízení se automaticky vypne při jakémkoliv riziku.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔌</div>
+                    <h3 class="feature-title">Smart Feed-in</h3>
+                    <p class="feature-desc">Pokročilá funkce pro dodávku energie do domácí sítě přes speciální MIG zásuvky. Úspora nákladů za elektřinu během špičky.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICKÉ PARAMETRY -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technické parametry</h2>
+            <table class="specs-table">
+                <thead>
+                    <tr>
+                        <th>Parametr</th>
+                        <th>Hodnota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kapacita baterie</td>
+                        <td>2048 Wh (51,2 V / 40 Ah)</td>
+                    </tr>
+                    <tr>
+                        <td>Typ baterie</td>
+                        <td>LiFePO₄ (lithium-železo-fosfát)</td>
+                    </tr>
+                    <tr>
+                        <td>Životnost baterie</td>
+                        <td>3500+ cyklů (vybíjení do 70 %)</td>
+                    </tr>
+                    <tr>
+                        <td>AC výstup (trvalý)</td>
+                        <td>2200 W</td>
+                    </tr>
+                    <tr>
+                        <td>AC výstup (peak)</td>
+                        <td>4400 W</td>
+                    </tr>
+                    <tr>
+                        <td>Typ AC výstupu</td>
+                        <td>Čistý sinus (Pure Sine Wave)</td>
+                    </tr>
+                    <tr>
+                        <td>AC nabíjení</td>
+                        <td>1600 W (doba nabití 1,5–2 hodiny)</td>
+                    </tr>
+                    <tr>
+                        <td>Solární nabíjení</td>
+                        <td>18–145 V DC, max. 1600 W</td>
+                    </tr>
+                    <tr>
+                        <td>USB-C výstup</td>
+                        <td>2× PD 100 W</td>
+                    </tr>
+                    <tr>
+                        <td>USB-A výstup</td>
+                        <td>4× QC 3.0 (18 W)</td>
+                    </tr>
+                    <tr>
+                        <td>DC výstup</td>
+                        <td>2× 12 V / 10 A</td>
+                    </tr>
+                    <tr>
+                        <td>Car charging výstup</td>
+                        <td>12 V / 10 A</td>
+                    </tr>
+                    <tr>
+                        <td>UPS funkce</td>
+                        <td>Ano (automatické přepnutí < 10 ms)</td>
+                    </tr>
+                    <tr>
+                        <td>Ovládání</td>
+                        <td>LCD displej + aplikace Wonderfree (WiFi/BT/Hotspot)</td>
+                    </tr>
+                    <tr>
+                        <td>Ochranné funkce</td>
+                        <td>Zkrat, přepětí, přetížení, přehřátí, nízké napětí</td>
+                    </tr>
+                    <tr>
+                        <td>Rozměry (D×Š×V)</td>
+                        <td>395 × 280 × 330 mm</td>
+                    </tr>
+                    <tr>
+                        <td>Hmotnost</td>
+                        <td>cca 22 kg</td>
+                    </tr>
+                    <tr>
+                        <td>Provozní teplota</td>
+                        <td>-10 °C až +45 °C</td>
+                    </tr>
+                    <tr>
+                        <td>Smart Feed-in</td>
+                        <td>Ano (s MIG zásuvkami)</td>
+                    </tr>
+                    <tr>
+                        <td>Certifikace</td>
+                        <td>CE, RoHS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SCÉNÁŘE POUŽITÍ -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Kde všude stanici využijete?</h2>
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <div class="scenario-emoji">🏠</div>
+                    <h3 class="scenario-title">Domácnost</h3>
+                    <p class="scenario-desc">Záložní zdroj při výpadku proudu. Napájí ledničku, osvětlení, router, pec nebo TV. UPS funkce chrání počítač.</p>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-emoji">🚐</div>
+                    <h3 class="scenario-title">Karavan</h3>
+                    <p class="scenario-desc">Energie na cestách. Napájí ledničku, osvětlení, nabíječky, varnou konvici. Solární dobíjení = neomezená autonomie.</p>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-emoji">🏡</div>
+                    <h3 class="scenario-title">Chata</h3>
+                    <p class="scenario-desc">Dokonalé řešení pro chaty bez elektrické přípojky. Solární panely + stanice = plná soběstačnost celý rok.</p>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-emoji">🔧</div>
+                    <h3 class="scenario-title">Dílna</h3>
+                    <p class="scenario-desc">Mobilní zdroj pro elektrické nářadí v terénu. Vrtačky, brusky, svářečky – vše bez přístupu k síti 230 V.</p>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-emoji">⛺</div>
+                    <h3 class="scenario-title">Kempování</h3>
+                    <p class="scenario-desc">Outdoor dobrodružství s komfortem. LED osvětlení, nabíjení elektroniky, přenosná lednice, elektrický gril.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CO JE V BALENÍ + PŘÍSLUŠENSTVÍ -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Co je v balení a co doporučujeme dokoupit</h2>
+            <div class="package-grid">
+                <div class="package-box">
+                    <h3>📦 Obsah balení</h3>
+                    <ul class="package-list">
+                        <li>Nabíjecí stanice Hobby 2200W / 2048Wh</li>
+                        <li>AC nabíjecí kabel (230 V)</li>
+                        <li>Car charging kabel (12 V)</li>
+                        <li>Solární nabíjecí kabel MC4</li>
+                        <li>Uživatelská příručka v češtině</li>
+                        <li>Záruční list</li>
+                    </ul>
+                </div>
+                <div class="package-box">
+                    <h3>💡 Doporučené příslušenství</h3>
+                    <ul class="package-list">
+                        <li>Solární panel 400 W (rychlejší nabíjení)</li>
+                        <li>MIG zásuvky pro Smart Feed-in</li>
+                        <li>Přepravní taška s polstrováním</li>
+                        <li>Prodlužovací AC kabel 5 m</li>
+                        <li>DC adaptéry pro různá zařízení</li>
+                        <li>Dodatečný set MC4 konektorů</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <h2 class="section-title">Často kladené otázky (FAQ)</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Je třeba Wi-Fi k ovládání zařízení?</div>
+                <div class="faq-answer">Ne, Wi-Fi není nezbytná. Stanici lze ovládat také přes Bluetooth nebo pomocí mobilního hotspotu. Wi-Fi je výhodná pro pohodlnější přístup a automatické aktualizace firmwaru, ale pro běžné používání není nutná.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Funguje stanice i venku nebo mimo dosah internetu?</div>
+                <div class="faq-answer">Ano, stanice funguje zcela nezávisle na internetu. Pokud není dostupná Wi-Fi, můžete použít Bluetooth nebo vytvořit síť přes mobilní hotspot. Zařízení je navrženo pro použití v exteriéru při běžné vlhkosti (ne za deště).</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Jak dlouho vydrží baterie?</div>
+                <div class="faq-answer">LiFePO₄ baterie vydrží minimálně 3500 cyklů při standardním používání (vybíjení do 70 %). To odpovídá více než 10 letům provozu při každodenním využití. Oproti klasickým Li-ion bateriím jde o výrazně delší životnost.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Co je potřeba k funkci Smart Feed-in?</div>
+                <div class="faq-answer">Pro funkci Smart Feed-in (dodávka energie zpět do domácí sítě) je třeba používat speciální MIG zásuvky, které jsou určené právě pro toto zařízení. Běžné zásuvky nejsou s touto funkcí kompatibilní.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Jak rychle se stanice plně nabije?</div>
+                <div class="faq-answer">Z běžné elektrické zásuvky (AC 1600 W) se stanice dobije zcela přibližně za 1,5 až 2 hodiny. Doba nabíjení závisí na aktuální kapacitě baterie a podmínkách elektrické sítě.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Může stanice nabíjet i ze solárních panelů?</div>
+                <div class="faq-answer">Ano. Solární vstup podporuje až 1600 W a široký napěťový rozsah 18–145 V DC, takže jej snadno propojíte s běžnými fotovoltaickými panely. Ideální pro chaty, karavany nebo off-grid použití.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Co se stane při přetížení nebo přehřátí?</div>
+                <div class="faq-answer">Stanice je vybavena komplexní ochranou proti zkratu, přepětí, přetížení, přehřátí i nízkému napětí. V rizikové situaci se automaticky vypne, aby předešla poškození zařízení i připojených spotřebičů.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Lze stanici aktualizovat?</div>
+                <div class="faq-answer">Ano. Jakmile je k dispozici nová verze softwaru, aplikace Wonderfree vás upozorní a nabídne možnost zařízení vzdáleně aktualizovat jedním kliknutím. Firmware je tak vždy aktuální.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Je stanice bezpečná i pro citlivou elektroniku?</div>
+                <div class="faq-answer">Ano. AC výstup má čistý sinusový průběh (Pure Sine Wave), který je vhodný i pro spotřebiče citlivé na kolísání napětí – například notebooky, routery, lékařské přístroje nebo měřicí zařízení.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Jak rychle přepne UPS funkce při výpadku proudu?</div>
+                <div class="faq-answer">UPS funkce přepne automaticky během méně než 10 milisekund. To je dostatečně rychlé, aby nedošlo k přerušení napájení počítače, routeru nebo jiných citlivých zařízení.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Jaké spotřebiče mohu připojit?</div>
+                <div class="faq-answer">Díky trvalému výkonu 2200 W (peak 4400 W) můžete napájet většinu domácích spotřebičů: ledničku, televizi, notebook, osvětlení, router, varnou konvici, mikrovlnnou troubu nebo elektrické nářadí.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Lze stanici používat při nabíjení?</div>
+                <div class="faq-answer">Ano, stanici můžete používat i během nabíjení. Funkce pass-through umožňuje současně dodávat energii do připojených spotřebičů i dobíjet baterii.</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA FOOTER -->
+    <section class="cta-footer">
+        <div class="container">
+            <h2>Připraveni na energetickou nezávislost?</h2>
+            <p>Objednejte si nabíjecí stanici Hobby 2200W ještě dnes a získejte dopravu zdarma.</p>
+            <div class="cta-buttons">
+                <button class="cta-primary">Koupit nyní za 29 990 Kč</button>
+                <button class="cta-secondary">Technická podpora</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
